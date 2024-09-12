@@ -44,7 +44,7 @@ This example demonstrates how to use the IAM User module to create a user with a
 
 ```hcl
 module "iam_user" {
-  source        = "path_to_your_module"
+  source        = "github.com/opstimus/terraform-aws-iam-user?ref=v<RELEASE>"
 
   project       = "my-project"
   environment   = "dev"
@@ -60,3 +60,4 @@ module "iam_user" {
     ]
   })
 }
+```
