@@ -14,21 +14,25 @@ resource "aws_iam_access_key" "main" {
 }
 
 resource "aws_secretsmanager_secret" "access_key" {
-  name = "${var.project}-${var.environment}-${var.name}-iam-access-key"
-  tags = var.tags
+  count = var.generate_access_secret_key ? 1 : 0
+  name  = "${var.project}-${var.environment}-${var.name}-iam-access-key"
+  tags  = var.tags
 }
 
 resource "aws_secretsmanager_secret_version" "access_key" {
+  count         = var.generate_access_secret_key ? 1 : 0
   secret_id     = aws_secretsmanager_secret.access_key.id
   secret_string = aws_iam_access_key.main.id
 }
 
 resource "aws_secretsmanager_secret" "secret_key" {
-  name = "${var.project}-${var.environment}-${var.name}-iam-secret-key"
-  tags = var.tags
+  count = var.generate_access_secret_key ? 1 : 0
+  name  = "${var.project}-${var.environment}-${var.name}-iam-secret-key"
+  tags  = var.tags
 }
 
 resource "aws_secretsmanager_secret_version" "secret_key" {
+  count         = var.generate_access_secret_key ? 1 : 0
   secret_id     = aws_secretsmanager_secret.secret_key.id
   secret_string = aws_iam_access_key.main.secret
 }
