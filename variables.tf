@@ -13,6 +13,12 @@ variable "name" {
   description = "User name"
 }
 
+variable "tags" {
+  type        = map(string)
+  description = "A map of tags to assign to the resource."
+  default     = {}
+}
+
 variable "user_policy" {
   type = string
 }

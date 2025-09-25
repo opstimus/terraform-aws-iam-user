@@ -28,6 +28,7 @@ This Terraform module creates an AWS IAM user with an associated user policy and
 | environment | Environment name   | string | -       |   yes    |
 | name        | User name          | string | -       |   yes    |
 | user_policy | IAM user policy    | string | -       |   yes    |
+| tags        | tags               | map(string) | -       |   no    |
 
 ## Outputs
 
@@ -59,5 +60,9 @@ module "iam_user" {
       }
     ]
   })
+  tags = {
+    Project = <project-name>
+    Environment = <environment-name>
+  }
 }
 ```
