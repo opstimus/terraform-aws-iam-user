@@ -23,7 +23,7 @@ resource "aws_secretsmanager_secret" "access_key" {
 resource "aws_secretsmanager_secret_version" "access_key" {
   count         = var.generate_access_secret_key ? 1 : 0
   secret_id     = aws_secretsmanager_secret.access_key[0].id
-  secret_string = aws_iam_access_key[0].main.id
+  secret_string = aws_iam_access_key.main[0].id
 }
 
 resource "aws_secretsmanager_secret" "secret_key" {
