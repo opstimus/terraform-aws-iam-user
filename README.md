@@ -9,13 +9,13 @@ This Terraform module creates an AWS IAM user with an associated user policy and
 | Name      | Version   |
 |-----------|-----------|
 | terraform | >= 1.3.0  |
-| aws       | >= 4.0    |
+| aws       | >= 6.0    |
 
 ## Providers
 
 | Name     | Version   |
 |----------|-----------|
-| aws      | >= 4.0    |
+| aws      | >= 6.0    |
 | external | >= 2.2.0  |
 | random   | >= 3.4.0  |
 | time     | >= 0.9    |
