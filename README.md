@@ -16,9 +16,6 @@ This Terraform module creates an AWS IAM user with an associated user policy and
 | Name     | Version   |
 |----------|-----------|
 | aws      | >= 6.0    |
-| external | >= 2.2.0  |
-| random   | >= 3.4.0  |
-| time     | >= 0.9    |
 
 ## Inputs
 
@@ -47,7 +44,6 @@ This example demonstrates how to use the IAM User module to create a user with a
 ```hcl
 module "iam_user" {
   source        = "github.com/opstimus/terraform-aws-iam-user?ref=v<RELEASE>"
-
   project       = "my-project"
   environment   = "dev"
   name          = "my-user"
